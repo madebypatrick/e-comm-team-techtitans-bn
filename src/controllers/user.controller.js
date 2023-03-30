@@ -177,6 +177,8 @@ const login = async (req, res) => {
     const token = JwtUtility.generateToken(
       {
         id: user.id,
+        uuid:user.uuid,
+        role:user.role,
         email: user.email,
       },
       "1d"
