@@ -4,5 +4,6 @@ import logoutRouter from "./logout.routes";
 const router = Router();
 
 router.use('/user', userRouter);
-router.use('/logout',logoutRouter)
+router.use('/logout', logoutRouter);
+
 export default router;

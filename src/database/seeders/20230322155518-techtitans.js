@@ -7,12 +7,11 @@ module.exports = {
       "Users",
       [
         {
-          fullname: "richard",
-          email: "richard@gmail.com",
+          fullname: 'richard',
+          email: 'richard@gmail.com',
           //the hashed password below is 'richard123'
-          password:
-            "$2y$10$7a52OC6C3uCvK7nm64efXejZaaTxd04jzgFoaKVJrJt8bhsJGfpKC",
-          role: 1,
+          password: '$2y$10$7a52OC6C3uCvK7nm64efXejZaaTxd04jzgFoaKVJrJt8bhsJGfpKC',
+          roleId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -32,6 +31,38 @@ module.exports = {
       ],
       {}
     );
+
+    await queryInterface.bulkInsert(
+      "Roles",
+      [
+        {
+          role:'guest',
+          description:'guest',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          role:'customer',
+          description:'customer',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          role:'vendor',
+          description:'vendor',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          role:'admin',
+          description:'admin',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
+
 
     await queryInterface.bulkInsert(
       "Products",
