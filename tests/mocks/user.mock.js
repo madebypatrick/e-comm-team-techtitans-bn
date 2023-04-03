@@ -14,6 +14,7 @@ export const theSuccessLoginCredentials = {
   password: "Password@123",
 };
 
+<<<<<<< HEAD
 export const profile = {
   gender: "male",
   birthdate: "1985-03-30T06:22:23.855Z",
@@ -22,3 +23,7 @@ export const profile = {
   location: "Karongi",
   billingAddress: "India",
 };
+=======
+}
+
+>>>>>>> 063cbf4 (ft(google-login): finishes google signup and login #184752243)
