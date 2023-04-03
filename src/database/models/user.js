@@ -1,5 +1,6 @@
 'use strict';
 const { Model } = require('sequelize');
+const speakeasy = require('speakeasy');
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
         /**
@@ -16,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
             fullname: DataTypes.STRING,
             email: DataTypes.STRING,
             password: DataTypes.STRING,
+            mfa_secret: DataTypes.STRING,
             role: {
                 type: DataTypes.INTEGER,
                 defaultValue: 1,
@@ -24,6 +26,17 @@ module.exports = (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'User',
+            getterMethods: {
+                mfa_token() {
+                  if (this.mfa_secret) {
+                    return speakeasy.totp({
+                      secret: this.mfa_secret,
+                      encoding: 'base32',
+                    });
+                  }
+                  return null;
+                },
+              },
         },
     );
     return User;

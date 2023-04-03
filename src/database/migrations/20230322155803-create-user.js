@@ -18,6 +18,9 @@ module.exports = {
       password: {
         type: Sequelize.STRING,
       },
+      mfa_secret: {
+        type: Sequelize.STRING,
+      },
       role: {
         type: Sequelize.INTEGER,
       },
