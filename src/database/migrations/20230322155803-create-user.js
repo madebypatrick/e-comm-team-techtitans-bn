@@ -14,6 +14,7 @@ module.exports = {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
       },
+<<<<<<< HEAD
 
       fullname: DataTypes.STRING,
       email: DataTypes.STRING,
@@ -24,6 +25,11 @@ module.exports = {
       preferredCurrency: DataTypes.STRING,
       location: DataTypes.STRING,
       billingAddress: DataTypes.STRING,
+=======
+      mfa_secret: {
+        type: Sequelize.STRING,
+      },
+>>>>>>> c17a850 (feature(Authentication):Two factor authentication)
       role: {
         type: DataTypes.INTEGER,
       },
