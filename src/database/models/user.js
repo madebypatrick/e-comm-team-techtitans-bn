@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     }
-
+    
     User.init(
         {
             uuid: {
@@ -22,12 +22,14 @@ module.exports = (sequelize, DataTypes) => {
             fullname: DataTypes.STRING,
             email: DataTypes.STRING,
             password: DataTypes.STRING,
+            mfa_secret: DataTypes.STRING,
             gender: DataTypes.STRING,
             birthdate: DataTypes.DATE,
             preferredLanguage: DataTypes.STRING,
             preferredCurrency: DataTypes.STRING,
             location: DataTypes.STRING,
             billingAddress: DataTypes.STRING,
+
             role: {
                 type: DataTypes.INTEGER,
                 defaultValue: 1,
@@ -51,7 +53,4 @@ module.exports = (sequelize, DataTypes) => {
     );
     return User;
 };
-
-
-
 

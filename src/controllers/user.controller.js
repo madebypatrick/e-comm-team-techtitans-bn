@@ -188,8 +188,6 @@ const login = async (req, res) => {
       const subject='your Otp';
       const text=otp;
       sendEmail.sendEmail(to,subject,text)
-
-
       console.log(`Your one-time code is: ${otp}`);
 
       // Return a response indicating that the user needs to enter their one-time code
@@ -419,6 +417,7 @@ const updateProfile = async (req, res) => {
 export {
   verifyUser,
   createUser,
+  verifyOtp,
   deleteAllUsers,
   findAllUsers,
   forgotPassword,
